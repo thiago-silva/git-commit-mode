@@ -567,6 +567,7 @@ Turning on git commit calls the hooks in `git-commit-mode-hook'."
   (when (fboundp 'toggle-save-place)
     (toggle-save-place 0))
   (setq fill-column 72)
+  (auto-fill-mode)
   (run-mode-hooks 'git-commit-mode-hook)
   (setq mode-name "Git-Commit"))
 
