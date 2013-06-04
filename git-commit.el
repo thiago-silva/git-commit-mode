@@ -20,6 +20,10 @@
 
 ;;; Code:
 
+
+(defvar git-commit-fill-column 72
+  "Fill column value for commit message.")
+
 (defgroup git-commit '((jit-lock custom-group))
   "Mode for editing git commit messages"
   :group 'faces)
@@ -566,7 +570,7 @@ Turning on git commit calls the hooks in `git-commit-mode-hook'."
   (git-commit-font-lock-diff)
   (when (fboundp 'toggle-save-place)
     (toggle-save-place 0))
-  (setq fill-column 72)
+  (setq fill-column git-commit-fill-column)
   (auto-fill-mode)
   (run-mode-hooks 'git-commit-mode-hook)
   (setq mode-name "Git-Commit"))
